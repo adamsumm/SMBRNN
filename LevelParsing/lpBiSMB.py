@@ -32,7 +32,7 @@ def parseLevel(levelname,tiles):
     # plt.show()
     tilemap = {}
     
-    prefix =  'SMBTiles/tileset_tile'
+    prefix =  'Tiles/SMBTiles/tileset_tile'
     postfix = '.png'
     tile = 'X'
     for t in ['LLground','LLground2','LLground3','LLground4','LLground5',
@@ -42,67 +42,67 @@ def parseLevel(levelname,tiles):
         tilemap['{}{}{}'.format(prefix,t,postfix)] = tile
 
     
-    prefix =  'SMBTiles/tileset_tile'
+    prefix =  'Tiles/SMBTiles/tileset_tile'
     postfix = '.png'
     tile = '?'
     for t in ['Mushroom','MushroomLL','MushroomLL2','MushroomLL3','MushroomLL4',
                     'MushroomLL5','MushroomLL6','MushroomLL7','MushroomLL8','MushroomHidden']:
         tilemap['{}{}{}'.format(prefix,t,postfix)] = tile
     
-    prefix =  'SMBTiles/tileset_tile'
+    prefix =  'Tiles/SMBTiles/tileset_tile'
     postfix = '.png'
     tile = 'S'
     for t in ['LLbreak','LLbreak2','01','03','67','68','69']:
         tilemap['{}{}{}'.format(prefix,t,postfix)] = tile
     
-    prefix =  'SMBTiles/tileset_tile'
+    prefix =  'Tiles/SMBTiles/tileset_tile'
     postfix = '.png'
     tile = 'Q'
     for t in ['24','90']:
         tilemap['{}{}{}'.format(prefix,t,postfix)] = tile
         
-    prefix =  'SMBTiles/'
+    prefix =  'Tiles/SMBTiles/'
     postfix = '.png'
     tile = 'E'
     for t in ['hammerbro','turtle1','turtle2','fly1','fly2','fly3','fly4','turtle1D','turtle2D','fly1D','fly2D','fly3D','fly4D','pirannha','turtle1b','turtle2b','fly1b','fly2b','fly3b','fly4b','pirannha2','turtle1bD','turtle2bD','fly1bD','fly2bD','fly3bD','fly4bD','pirannha2D','goomba','goomba2','goomba2D','PPR','PPRud']:
         tilemap['{}{}{}'.format(prefix,t,postfix)] = tile
    
 
-    prefix =  'SMBTiles/tileset_tile'
+    prefix =  'Tiles/SMBTiles/tileset_tile'
     postfix = '.png'
     tile = 'B'
     for t in ['09','75']:
         tilemap['{}{}{}'.format(prefix,t,postfix)] = tile
 
-    prefix =  'SMBTiles/tileset_tile'
+    prefix =  'Tiles/SMBTiles/tileset_tile'
     postfix = '.png'
     tile = 'b'
     for t in ['108','42']:
         tilemap['{}{}{}'.format(prefix,t,postfix)] = tile
 
-    prefix =  'SMBTiles/tileset_tile'
+    prefix =  'Tiles/SMBTiles/tileset_tile'
     postfix = '.png'
     tile = 'o'
     for t in  ['57','58','123']:
         tilemap['{}{}{}'.format(prefix,t,postfix)] = tile
 
-    prefix =  'SMBTiles/'
+    prefix =  'Tiles/SMBTiles/'
     postfix = '.png'
     tile = '['
     for t in  ['pipe','pipeD','Lg']:
         tilemap['{}{}{}'.format(prefix,t,postfix)] = tile
 
-    prefix =  'SMBTiles/'
+    prefix =  'Tiles/SMBTiles/'
     postfix = '.png'
     tile = '>'
     for t in  ['pipe_ur','URg']:
         tilemap['{}{}{}'.format(prefix,t,postfix)] = tile
-    prefix =  'SMBTiles/'
+    prefix =  'Tiles/SMBTiles/'
     postfix = '.png'
     tile = '<'
     for t in  ['pipe_ul','ULg']:
         tilemap['{}{}{}'.format(prefix,t,postfix)] = tile
-    prefix =  'SMBTiles/'
+    prefix =  'Tiles/SMBTiles/'
     postfix = '.png'
     tile = ']'
     for t in  ['pipe_r','pipe_rD','Rg']:
@@ -231,14 +231,14 @@ def parseLevel(levelname,tiles):
             neighbors.append([dist+1,(pos[0],pos[1]+1,-1)])
             if pos[1]+1 <= maxY:
                 if not isSolid(levelStr[pos[1]+1][pos[0]+1]):
-                    neighbors.append([dist+1,(pos[0]+1,pos[1]+1,-1)])
+                    neighbors.append([dist+1.4,(pos[0]+1,pos[1]+1,-1)])
                 if not isSolid(levelStr[pos[1]+1][pos[0]-1]):
-                    neighbors.append([dist+1,(pos[0]-1,pos[1]+1,-1)])
+                    neighbors.append([dist+1.4,(pos[0]-1,pos[1]+1,-1)])
             if pos[1]+2 <= maxY:
                 if not isSolid(levelStr[pos[1]+2][pos[0]+1]):
-                    neighbors.append([dist+1,(pos[0]+1,pos[1]+2,-1)])
+                    neighbors.append([dist+2,(pos[0]+1,pos[1]+2,-1)])
                 if not isSolid(levelStr[pos[1]+2][pos[0]-1]):
-                    neighbors.append([dist+1,(pos[0]-1,pos[1]+2,-1)])
+                    neighbors.append([dist+2,(pos[0]-1,pos[1]+2,-1)])
         return neighbors
             
     paths = pathfinding.dijkstras_shortest_path( (curX,curY,-1), lambda pos: pos[0] == maxX, getNeighbors)
@@ -313,23 +313,23 @@ def parseLevel(levelname,tiles):
 
             outputFile.write('\n')
         #    levelMap['{},{}'.format(round(locs[0][ii]/16),round(locs[1][ii]/16))] = tile
-levels = [  'Mario1/mario-1-1.png','Mario1/mario-1-2.png','Mario1/mario-1-3.png','Mario1/mario-2-1.png',
-            'Mario1/mario-3-1.png','Mario1/mario-3-2.png','Mario1/mario-3-3.png','Mario1/mario-4-1.png',
-            'Mario1/mario-4-2.png','Mario1/mario-4-3.png','Mario1/mario-5-1.png','Mario1/mario-5-2.png',
-            'Mario1/mario-5-3.png','Mario1/mario-6-1.png','Mario1/mario-6-2.png','Mario1/mario-6-3.png',
-            'Mario1/mario-7-1.png','Mario1/mario-8-1.png','Mario1/mario-8-2.png','MarioLL/SuperMarioBros2(J)-World1-1.png','MarioLL/SuperMarioBros2(J)-World1-2.png','MarioLL/SuperMarioBros2(J)-World1-3.png',
- 'MarioLL/SuperMarioBros2(J)-World2-1.png','MarioLL/SuperMarioBros2(J)-World2-2.png',
- 'MarioLL/SuperMarioBros2(J)-World2-3.png','MarioLL/SuperMarioBros2(J)-World3-1.png',
- 'MarioLL/SuperMarioBros2(J)-World3-3.png','MarioLL/SuperMarioBros2(J)-World4-1.png',
- 'MarioLL/SuperMarioBros2(J)-World4-2.png',
- 'MarioLL/SuperMarioBros2(J)-World4-3.png','MarioLL/SuperMarioBros2(J)-World5-1.png',
- 'MarioLL/SuperMarioBros2(J)-World5-2.png','MarioLL/SuperMarioBros2(J)-World6-1.png',
- 'MarioLL/SuperMarioBros2(J)-World6-3.png',
- 'MarioLL/SuperMarioBros2(J)-World8-1.png','MarioLL/SuperMarioBros2(J)-WorldA-1.png','MarioLL/SuperMarioBros2(J)-WorldA-3.png',
- 'MarioLL/SuperMarioBros2(J)-WorldB-1.png','MarioLL/SuperMarioBros2(J)-WorldB-3.png','MarioLL/SuperMarioBros2(J)-WorldC-2.png',
- 'MarioLL/SuperMarioBros2(J)-WorldD-1.png','MarioLL/SuperMarioBros2(J)-WorldD-2.png',
- 'MarioLL/SuperMarioBros2(J)-WorldD-3.png',]
-#levels = ['Mario1/mario-6-3.png']
+levels = [  'levels/mario-1-1.png','levels/mario-1-2.png','levels/mario-1-3.png','levels/mario-2-1.png',
+            'levels/mario-3-1.png','levels/mario-3-2.png','levels/mario-3-3.png','levels/mario-4-1.png',
+            'levels/mario-4-2.png','levels/mario-4-3.png','levels/mario-5-1.png','levels/mario-5-2.png',
+            'levels/mario-5-3.png','levels/mario-6-1.png','levels/mario-6-2.png','levels/mario-6-3.png',
+            'levels/mario-7-1.png','levels/mario-8-1.png','levels/mario-8-2.png','levels/SuperMarioBros2(J)-World1-1.png','levels/SuperMarioBros2(J)-World1-2.png','levels/SuperMarioBros2(J)-World1-3.png',
+ 'levels/SuperMarioBros2(J)-World2-1.png','levels/SuperMarioBros2(J)-World2-2.png',
+ 'levels/SuperMarioBros2(J)-World2-3.png','levels/SuperMarioBros2(J)-World3-1.png',
+ 'levels/SuperMarioBros2(J)-World3-3.png','levels/SuperMarioBros2(J)-World4-1.png',
+ 'levels/SuperMarioBros2(J)-World4-2.png',
+ 'levels/SuperMarioBros2(J)-World4-3.png','levels/SuperMarioBros2(J)-World5-1.png',
+ 'levels/SuperMarioBros2(J)-World5-2.png','levels/SuperMarioBros2(J)-World6-1.png',
+ 'levels/SuperMarioBros2(J)-World6-3.png',
+ 'levels/SuperMarioBros2(J)-World8-1.png','levels/SuperMarioBros2(J)-WorldA-1.png','levels/SuperMarioBros2(J)-WorldA-3.png',
+ 'levels/SuperMarioBros2(J)-WorldB-1.png','levels/SuperMarioBros2(J)-WorldB-3.png','levels/SuperMarioBros2(J)-WorldC-2.png',
+ 'levels/SuperMarioBros2(J)-WorldD-1.png','levels/SuperMarioBros2(J)-WorldD-2.png',
+ 'levels/SuperMarioBros2(J)-WorldD-3.png',]
+#levels = ['levels/mario-6-3.png']
 tiles = []
 for levelFile in levels:
     parseLevel(levelFile,tiles)
