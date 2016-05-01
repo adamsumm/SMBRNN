@@ -1,1 +1,2 @@
-th sample.lua smbLineNo_512_3_0.8_10_0.002_0.97_800/lm_lstm_epoch5.00_0.0189.t7 -primetext ":(-------------XXX)XXX*------------(------------*XXX" -seed $1 -length 4400 > temp; python parseBackwordsForwards.py 
+#th sample.lua smbLineNo_512_3_0.8_10_0.002_0.97_800/lm_lstm_epoch5.00_0.0189.t7 -primetext ":(-------------XXX)XXX*------------(------------*XXX" -seed $1 -length 4400 > temp; python parseBackwordsForwards.py 
+th sample.lua smbBiPathsMk2_512_2_0.8_20_0.004_0.97_200/lm_lstm_epoch5.21_0.0752.t7 -primetext "(-------------XXX)XXX*------------(------------*XXX" -seed $1 -length 3400 > temp; python parseBackwordsForwards.py 
