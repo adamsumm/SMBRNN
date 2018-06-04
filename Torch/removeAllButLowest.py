@@ -25,7 +25,7 @@ for path in sys.argv[1:]:
         if file not in minFiles:
            os.remove(join(path,file))
         else :
-            print path,file
+            print path + "/" +file
        # if m:
         #    print m.group(1)
     #print onlyfiles

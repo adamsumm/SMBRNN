@@ -10,12 +10,21 @@ dirs = ['../Torch/outputbasic',
 '../Torch/outputbiLineNoP',
 '../Torch/outputbiP',
 '../Torch/outputbasicP',]
+
+dirs = ['../Torch/outputbiLineNoP_128_0',
+'../Torch/outputbiLineNoP_256_0',
+'../Torch/outputbiLineNoP_256_0.8',
+'../Torch/outputbiLineNoP_256_3_0.6',
+'../Torch/outputbiLineNoP_512_0.2',
+'../Torch/outputbiLineNoP_512_3_0.8',
+'../Torch/outputbiLineNoP_64_0']
+
 statNames = None
 for d in dirs:
     outputAG = []
     outputUG = []
     
-    for f in listdir(d):
+    for f in sorted(listdir(d)):
         print "Statting ", d, f
         if 'AG' in f or 'UG' in f:
             dataAG = []
